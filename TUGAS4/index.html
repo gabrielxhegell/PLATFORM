@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tugas 4 - JavaScript</h1>
+        <h2>Nama: [Nama Anda]</h2>
+        <h2>NIM: [NIM Anda]</h2>
+        <img src="foto.jpg" alt="Foto Anda">
+    </header>
+    <main>
+        <div>
+            <label for="nama">Nama :</label>
+            <input type="text" id="nama" placeholder="Teks Nama">
+        </div>
+        <div>
+            <label for="jumlah">Jumlah Pilihan :</label>
+            <input type="number" id="jumlah" placeholder="Jml">
+        </div>
+        <button onclick="tampilkanPilihan()">OK</button>
+        <div id="pilihanContainer"></div>
+        <button id="submitBtn" onclick="submit()">Submit</button>
+        <div id="hasil"></div>
+    </main>
+    <script src="script.js">
+    // Mendapatkan nilai parameter nama dan jumlah dari URL
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get('nama');
+    const jumlah = params.get('jumlah');
+
+    // Menampilkan nilai parameter pada halaman
+    document.getElementById('nama').innerText = nama;
+    document.getElementById('jumlah').innerText = jumlah;
+
+    // Mengarahkan pengguna ke halaman baru dengan parameter nama dan jumlah
+    function tampilkanPilihan() {
+        const nama = document.getElementById('nama').value;
+        const jumlah = document.getElementById('jumlah').value;
+        window.location.href = `halaman-baru-2.html?nama=${nama}&jumlah=${jumlah}`;
+    }
+
+    </script>
+</body>
+</html>

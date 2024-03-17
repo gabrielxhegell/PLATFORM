@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Baru 2</title>
+</head>
+<body>
+    <h1>Halaman Baru 2</h1>
+    <form id="pilihanForm">
+        <div>
+            <label>Pilihan :</label>
+            <br>
+            <input type="radio" id="pilihan1" name="pilihan" value="Teks Pilihan 1">
+            <label for="pilihan1">Teks Pilihan 1</label><br>
+            <input type="radio" id="pilihan2" name="pilihan" value="Teks Pilihan 2">
+            <label for="pilihan2">Teks Pilihan 2</label><br>
+            <input type="radio" id="pilihan3" name="pilihan" value="Teks Pilihan 3">
+            <label for="pilihan3">Teks Pilihan 3</label><br>
+            <input type="radio" id="pilihan4" name="pilihan" value="Teks Pilihan 4">
+            <label for="pilihan4">Teks Pilihan 4</label><br>
+            <input type="radio" id="pilihan5" name="pilihan" value="Teks Pilihan 5">
+            <label for="pilihan5">Teks Pilihan 5</label><br>
+        </div>
+        <button type="submit">OK</button>
+    </form>
+
+    <script>
+        // Menangkap form pilihan
+        const pilihanForm = document.getElementById('pilihanForm');
+
+        // Menampilkan nilai parameter pada halaman
+        pilihanForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const selectedOption = document.querySelector('input[name="pilihan"]:checked');
+            if (selectedOption) {
+                const pilihan = selectedOption.value;
+                const params = new URLSearchParams(window.location.search);
+                const nama = params.get('nama');
+                const jumlah = params.get('jumlah');
+                window.location.href = `halaman-baru-3.html?nama=${nama}&jumlah=${jumlah}&pilihan=${pilihan}`;
+            } else {
+                alert('Pilih salah satu opsi.');
+            }
+        });
+    </script>
+</body>
+</html>

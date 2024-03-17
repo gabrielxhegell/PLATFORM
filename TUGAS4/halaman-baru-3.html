@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Baru 3</title>
+</head>
+<body>
+    <h1>Halaman Baru 3</h1>
+    <div id="hasil"></div>
+
+    <script>
+        // Mendapatkan nilai parameter pilihan1, pilihan2, dst. dari URL
+        const params = new URLSearchParams(window.location.search);
+        const pilihan1 = params.get('pilihan1');
+        const pilihan2 = params.get('pilihan2');
+        const pilihan3 = params.get('pilihan3');
+        const pilihan4 = params.get('pilihan4');
+        const pilihan5 = params.get('pilihan5');
+        const pilihan = params.get('pilihan');
+
+        // Mendapatkan nilai parameter nama dan jumlah dari URL
+        const nama = params.get('nama');
+        const jumlah = params.get('jumlah');
+
+        // Menampilkan hasil
+        const hasilDiv = document.getElementById('hasil');
+        hasilDiv.innerText = `Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlah} pilihan yaitu ${pilihan1}, ${pilihan2}, ${pilihan3}, ${pilihan4}, ${pilihan5}, dan saya memilih ${pilihan}`;
+    </script>
+</body>
+</html>

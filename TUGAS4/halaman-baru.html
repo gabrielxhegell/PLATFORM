@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Baru</title>
+</head>
+<body>
+    <h1>Halaman Baru</h1>
+    <form id="pilihanForm">
+        <div>
+            <label for="pilihan1">Pilihan 1:</label>
+            <input type="text" id="pilihan1" placeholder="Masukkan pilihan 1">
+        </div>
+        <div>
+            <label for="pilihan2">Pilihan 2:</label>
+            <input type="text" id="pilihan2" placeholder="Masukkan pilihan 2">
+        </div>
+        <div>
+            <label for="pilihan3">Pilihan 3:</label>
+            <input type="text" id="pilihan3" placeholder="Masukkan pilihan 3">
+        </div>
+        <div>
+            <label for="pilihan4">Pilihan 4:</label>
+            <input type="text" id="pilihan4" placeholder="Masukkan pilihan 4">
+        </div>
+        <div>
+            <label for="pilihan5">Pilihan 5:</label>
+            <input type="text" id="pilihan5" placeholder="Masukkan pilihan 5">
+        </div>
+        <button type="button" onclick="tampilkanPilihan()">OK</button>
+    </form>
+
+    <script>
+        function tampilkanPilihan() {
+            const pilihan1 = document.getElementById('pilihan1').value;
+            const pilihan2 = document.getElementById('pilihan2').value;
+            const pilihan3 = document.getElementById('pilihan3').value;
+            const pilihan4 = document.getElementById('pilihan4').value;
+            const pilihan5 = document.getElementById('pilihan5').value;
+
+            window.location.href = `halaman-baru-2.html?pilihan1=${pilihan1}&pilihan2=${pilihan2}&pilihan3=${pilihan3}&pilihan4=${pilihan4}&pilihan5=${pilihan5}`;
+        }
+    </script>
+</body>
+</html>
